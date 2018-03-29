@@ -18,6 +18,6 @@ Any NodeJS v4.0+ instance and MongoDb v2.6+
 
 ## License
 
-This project is licensed under the Apache 2.0 license. See the [LICENSE.md](LICENSE) file for more info.
+This project is licensed under the Apache 2.0 license. See the [LICENSE](LICENSE.md) file for more info.
 
 Copyright (c) 2017-2018
