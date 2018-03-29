@@ -4,7 +4,7 @@
   "version": "0.0.2",
   "author": {
     "name": "Ethan Peterson",
-    "email": "ethanpeterson@gmail.com"
+    "email": "ethanpeterson+github@gmail.com"
   },
   "scripts": {
     "XXtest": "set NODE_ENV=test&& mocha",
