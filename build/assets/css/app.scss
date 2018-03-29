@@ -1,0 +1,267 @@
+/* Variables ---------*/
+$baxter-blue: #003399;
+$warning-font: #e0bf09;
+$cool-blue: #005bff;
+$gray-white: #e0e0e0;
+$light-gray: #c0c0c0;
+$medium-gray: #a0a0a0;
+$dark-gray: #777;
+$darker-gray: #333;
+$black: #000;
+$default-white: #ffffff;
+$navbar-background-color: transparent;
+/*---------*/
+
+/* Mixins ---------*/
+@mixin box-shadow ($top: 0px, $right: 3px, $bottom: 6px, $left: 0px, $rgb: $dark-gray) {
+    -webkit-box-shadow: $top $right $bottom $left $rgb;
+    -moz-box-shadow: $top $right $bottom $left $rgb;
+    box-shadow: $top $right $bottom $left $rgb;
+}
+
+@mixin flexBox() {
+	display: -webkit-box; /* OLD - iOS 6 - Safari 3.1-6 */
+	display: -moz-box; /* OLD - Firefox 19 - (buggy but mostly works) */
+	display: -ms-flexbox; /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Chrome, Safari */
+	display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin flexBoxDirection($direction: column) {
+	-webkit-flex-direction: $direction;
+	flex-direction: $direction;
+}
+/*---------*/
+
+
+/* -------------------------------------------------- */
+html, body {
+    /*height: 100%;*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.main-content {
+	height: 100%;
+	height: 100vh;
+	min-height: 100vh;
+	
+	@include flexBox(); /* Implementation */
+	
+	@include flexBoxDirection(); /* Implementation */
+	
+	-webkit-align-items: stretch; /* Safari */ 
+	align-items: stretch;
+	
+	> section {
+		-webkit-flex: 1; /* Safari */ 
+		flex: 1;
+	}
+	
+	#wrap {
+		position: relative;
+		min-height: 80vh;  /* this plus #footer height should equal 100 */
+	}
+}
+
+#main-body {
+	margin-top: 2rem;
+}
+
+/* Set the fixed height of the footer here */
+#footer
+{
+
+    background-color: $gray-white;
+    border-top-color: $light-gray;
+	min-height: 20vh;  /* this plus #wrap height should equal 100 */
+    /*margin-top: 2em;*/
+}
+
+.navbar-footer {
+    .navbar-nav {
+        a {
+            color: $dark-gray;
+            &:hover { color: $darker-gray;
+                      background-color: $navbar-background-color;
+            }
+        }
+    }
+}
+
+/* override bootstrap colors -------------------------------------------------- */
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-default {
+    background-color: $baxter-blue;
+    border-color: $baxter-blue / 1.55;
+    @include box-shadow(); /* Implementation */
+    .navbar-brand {
+        color: $default-white;
+        &:hover, &:focus {
+            color: $medium-gray;
+            background-color: $navbar-background-color;
+        }
+    }
+    .navbar-nav {
+        > li {
+            > span, a {
+                color: $default-white;
+                font-family: Arial, Helvetica, sans-serif;
+                &:hover, &:focus {
+                    color: $medium-gray;
+                    background-color: $navbar-background-color;
+                }
+            }
+        }
+    }
+}
+
+.navbar-nav {
+	.nav-item {
+		padding-right: 1rem;
+	}
+}
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+/* whole site styles  */
+
+.validation-summary-valid {
+    display:none;
+}
+
+#new_shortener_form {
+    margin: 5em 0;
+}
+
+#custom_url_fields {
+    display: none;
+}
+
+h1.title {
+    font-size: 4em;
+    font-weight: lighter;
+}
+
+.shortened-title {
+    font-weight: bold;
+}
+
+.shortened-url {
+    font-size: 2em;
+    font-weight: lighter;
+}
+
+.sub-text {
+    font-size: larger;
+    line-height: 150%;
+    padding: 1em 0;
+}
+
+.small-details {
+    font-size: smaller;
+}
+
+.smaller-details {
+    font-size: xx-small;
+}
+
+.lightGray {
+    color: $medium-gray;
+}
+
+.url-list-item {
+    border: 1px solid $default-white;
+    border-bottom: 1px solid $light-gray;
+    padding: 5px;
+}
+
+.url-list-item:hover {
+    background-color: $gray-white;
+}
+
+.cushion {
+    padding: 0.5em;
+}
+
+.for_ie8_or_less_only {
+    display: none;
+}
+
+.profile-image-item {
+    padding: 2em;
+}
+
+.profile-image {
+    background-color: $gray-white;
+}
+
+.warning-font {
+    color: $warning-font
+}
+
+.cool-blue {
+    color: $cool-blue
+}
+
+#take_a_tour_content {
+    position:absolute;
+    bottom: 0;
+    right:10px;
+    clear: both;
+    overflow: hidden;
+}
+
+h1.title small {
+    font-size: 12px;
+    color: $medium-gray;
+}
+
+/* auto size the tool tip width */
+.tooltip-inner {
+    display:block !important;
+    width:auto;
+    max-width: 900px;
+    overflow: hidden;
+}
+
+/* add an additional button color */
+
+.btn-secondary {
+  color: $darker-gray;
+  background-color: $light-gray;
+  border-color: $medium-gray;
+  &:hover, &:focus, &:active, &.active, .open .dropdown-toggle & {
+      color: $black;
+      background-color: $medium-gray;
+      border-color: $dark-gray;
+  }
+  &:active, &.active, .open .dropdown-toggle & {
+      background-image: none;
+  }
+  .badge {
+      color: $light-gray;
+      background-color: $default-white;
+  }
+  &.disabled, &[disabled],
+  fieldset[disabled] &, &.disabled:hover,
+  &[disabled]:hover, fieldset[disabled] &:hover,
+  &.disabled:focus, &[disabled]:focus,fieldset[disabled] &:focus,
+  &.disabled:active, &[disabled]:active,fieldset[disabled] &:active,
+  &.disabled.active, &[disabled].active,fieldset[disabled] &.active {
+      background-color: $light-gray;
+      border-color: $medium-gray;
+  }
+}
+
+
+
+/* -------------------------------------------------- */
