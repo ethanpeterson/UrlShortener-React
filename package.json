@@ -1,5 +1,5 @@
 {
-  "name": "urlShortener-react",
+  "name": "urlshortener-react",
   "description": "A simple url shortener using react.js and mongodb",
   "version": "0.0.2",
   "author": {
