@@ -16,6 +16,10 @@ Any NodeJS v4.0+ instance and MongoDb v2.6+
 2. Set NODE_ENV to your environment, e.g. development, test, production. 
 3. Deploy NPM packages and build with Webpack, then run "node server.js" from the root
 
+## Author
+
+[ethanpeterson](https://github.com/ethanpeterson)
+
 ## License
 
 This project is licensed under the Apache 2.0 license. See the [LICENSE](LICENSE.md) file for more info.
